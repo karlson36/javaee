@@ -1,0 +1,26 @@
+//mvc
+(base) elina@MacBook-Pro-Elina ~ % wrk -t4 -c100 -d15s http://localhost:8080/mvc/hello
+Running 15s test @ http://localhost:8080/mvc/hello
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   105.98ms   14.53ms 276.52ms   98.61%
+    Req/Sec   238.82     28.08   252.00     88.01%
+  14216 requests in 15.09s, 1.75MB read
+  Socket errors: connect 0, read 1, write 0, timeout 0
+Requests/sec:    942.37
+Transfer/sec:    118.84KB
+(base) elina@MacBook-Pro-Elina ~ % wrk -t4 -c100 -d15s http://localhost:8081/webflux/hello
+unable to connect to localhost:8081 Connection refused
+(base) elina@MacBook-Pro-Elina ~ % 
+
+//webflux
+wrk -t4 -c100 -d15s http://localhost:8080/webflux/hello
+Running 15s test @ http://localhost:8080/webflux/hello
+  4 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   105.52ms    3.74ms 141.30ms   78.12%
+    Req/Sec   237.85     39.55   252.00     92.75%
+  14217 requests in 15.09s, 1.81MB read
+Requests/sec:    941.87
+Transfer/sec:    122.46KB
+
